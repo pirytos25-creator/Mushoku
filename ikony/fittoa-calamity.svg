@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Krater katastrofy Fittoa">
+  <title>Krater katastrofy Fittoa</title>
+  <g stroke="#3d3529" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 5 35 9 41 6 44 12 51 12 51 19 57 23 54 29 59 34 54 40 55 47 48 49 45 56 38 54 32 59 26 54 19 56 16 49 9 47 10 40 5 34 10 29 7 23 13 19 13 12 20 12 23 6Z" fill="#bd9652" fill-opacity=".24" stroke-width="2.3"/>
+    <path d="M15 30c5-11 27-15 35-3M12 39c10 12 31 12 41-1" stroke-width="1.7"/>
+    <path d="M20 26 16 22m28 1 4-4M15 44l5-2m27 1 5 3M31 52v-4" stroke-width="1.5"/>
+    <path d="M32 15c2 8 4 12 11 16-7 2-10 5-11 18-2-11-5-15-12-18 7-4 10-8 12-16Z" fill="#bd9652" stroke-width="2.2"/>
+    <path d="m25 31 5 1m8-1-5 1" stroke-width="1.5"/>
+  </g>
+</svg>

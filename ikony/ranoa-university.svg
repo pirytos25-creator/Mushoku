@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Uniwersytet Magii Ranoa">
+  <title>Uniwersytet Magii Ranoa w Sharii</title>
+  <g stroke="#3d3529" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 48V30l8-5 8 5v18M38 48V30l8-5 8 5v18" fill="#f2e5ca" stroke-width="2.1"/>
+    <path d="M7 31 18 23l11 8m6 0 11-8 11 8" stroke-width="2.1"/>
+    <path d="M25 48V18l7-10 7 10v30" fill="#f2e5ca" stroke-width="2.4"/>
+    <path d="M27 18h10M29 26h6M32 8V4" stroke-width="1.8"/>
+    <path d="M28 48V38a4 4 0 0 1 8 0v10" fill="#bd9652" fill-opacity=".34" stroke-width="2"/>
+    <path d="M14 35h7v8h-7zm29 0h7v8h-7z" fill="#bd9652" fill-opacity=".44" stroke-width="1.7"/>
+    <path d="M32 19v6m-3-3h6" stroke="#bd9652" stroke-width="2"/>
+    <path d="M8 50c8-2 15-1 24 2 9-3 16-4 24-2v7c-9-2-17-1-24 2-7-3-15-4-24-2v-7Z" fill="#f2e5ca" stroke-width="2"/>
+    <path d="M32 52v7" stroke-width="1.5"/>
+  </g>
+</svg>

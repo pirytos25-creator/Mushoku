@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Rapan pośród dwunastu żeber behemota">
+  <title>Rapan: miasto otoczone dwunastoma żebrami behemota</title>
+  <g stroke="#3d3529" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 51C2 39 4 24 20 9M14 51C5 40 7 25 22 11M18 51C8 39 10 26 24 13M22 51C12 40 14 27 26 15M26 50C19 40 18 27 28 16M30 49C26 40 24 29 30 18M54 51C62 39 60 24 44 9M50 51C59 40 57 25 42 11M46 51C56 39 54 26 40 13M42 51C52 40 50 27 38 15M38 50C45 40 46 27 36 16M34 49C38 40 40 29 34 18" stroke="#f2e5ca" stroke-width="3.4"/>
+    <path d="M10 51C2 39 4 24 20 9M14 51C5 40 7 25 22 11M18 51C8 39 10 26 24 13M22 51C12 40 14 27 26 15M26 50C19 40 18 27 28 16M30 49C26 40 24 29 30 18M54 51C62 39 60 24 44 9M50 51C59 40 57 25 42 11M46 51C56 39 54 26 40 13M42 51C52 40 50 27 38 15M38 50C45 40 46 27 36 16M34 49C38 40 40 29 34 18" stroke-width="1.35"/>
+    <path d="M10 53c9-4 16-5 22-5s13 1 22 5" stroke-width="1.7"/>
+    <path d="M23 46V35l9-6 9 6v11" fill="#bd9652" fill-opacity=".48" stroke-width="1.9"/>
+    <path d="m20 36 12-9 12 9" stroke-width="1.9"/>
+    <path d="M29 46v-7a3 3 0 0 1 6 0v7M18 54h28" stroke-width="1.7"/>
+    <path d="M29 23c2-3 4-3 6 0" stroke="#bd9652" stroke-width="2"/>
+  </g>
+</svg>

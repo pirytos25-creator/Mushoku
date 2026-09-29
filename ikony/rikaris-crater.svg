@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Miasto Rikaris w kraterze">
+  <title>Rikaris: miasto wewnątrz krateru</title>
+  <g stroke="#3d3529" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7 32c0-15 10-24 25-24s25 9 25 24-10 24-25 24S7 47 7 32Z" fill="#bd9652" fill-opacity=".22" stroke-width="2.4"/>
+    <path d="M11 28c6-9 14-13 21-13s16 4 21 13M10 39c9 8 35 10 44 0" stroke-width="1.8"/>
+    <path d="m8 23 6 3 4-7m27 0 4 7 7-3M9 46l8-3 4 9m22 0 4-9 8 3" stroke-width="1.8"/>
+    <path d="M18 37V28l6-4 6 4v9m4 3V25l6-5 6 5v15" fill="#f2e5ca" stroke-width="2"/>
+    <path d="m16 28 8-6 8 6m0-3 8-7 8 7" stroke-width="1.8"/>
+    <path d="M22 37v-5h4v5m13 3v-7h4v7" fill="#bd9652" fill-opacity=".65" stroke-width="1.5"/>
+    <path d="M24 44c5-2 12-2 16 0" stroke-width="1.6"/>
+  </g>
+</svg>
