@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1441" height="1024" viewBox="0 0 1441 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Mushoku Tensei — główne podpisy mapy świata</title>
+  <desc id="desc">Przezroczysta warstwa nazw kontynentów, Morza Ringus, najważniejszych regionów i miast dla autorskiej mapy 1441 na 1024.</desc>
+  <defs>
+    <filter id="inkShadow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.15" result="blur"/>
+      <feOffset in="blur" dx="0" dy="1.2" result="offset"/>
+      <feComponentTransfer in="offset" result="soft"><feFuncA type="linear" slope="0.45"/></feComponentTransfer>
+      <feMerge><feMergeNode in="soft"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif; paint-order: stroke fill; text-rendering: geometricPrecision; }
+    .continent { font-size: 23px; font-weight: 700; letter-spacing: 2.6px; fill: #26392d; stroke: #f4dfb8; stroke-width: 5px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .continent-sea { font-size: 22px; font-weight: 700; letter-spacing: 2.5px; fill: #173e48; stroke: #dbd7b7; stroke-width: 3.6px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .continent-heaven { font-size: 16px; font-weight: 700; letter-spacing: 1.25px; fill: #3b392d; stroke: #f5e4bd; stroke-width: 3.7px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .sea { font-size: 35px; font-style: italic; font-weight: 500; letter-spacing: 5px; fill: #254e55; stroke: #b9d1c7; stroke-width: 2.8px; stroke-linejoin: round; opacity: .83; }
+    .sea-rule { fill: none; stroke: #456e71; stroke-width: 1.2px; opacity: .68; }
+    .sea-diamond { fill: #456e71; opacity: .72; }
+    .realm { font-size: 17px; font-weight: 700; letter-spacing: 1.35px; fill: #39412d; stroke: #f4dfbd; stroke-width: 4.2px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .realm-light { font-size: 16px; font-weight: 700; letter-spacing: 1.35px; fill: #f3e9c8; stroke: #293b31; stroke-width: 4px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .city { font-size: 16px; font-weight: 700; letter-spacing: .75px; fill: #3c3528; stroke: #f7e3bd; stroke-width: 4.1px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .town { font-size: 14px; font-weight: 700; letter-spacing: .55px; fill: #3c3528; stroke: #f7e3bd; stroke-width: 3.6px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .harbor { font-size: 13px; font-weight: 700; letter-spacing: .45px; fill: #263d43; stroke: #e2e0c5; stroke-width: 3.4px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .landmark { font-size: 15px; font-style: italic; font-weight: 700; letter-spacing: .5px; fill: #57432f; stroke: #f5dfba; stroke-width: 3.8px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .small-landmark { font-size: 13px; font-style: italic; font-weight: 700; letter-spacing: .3px; fill: #51402f; stroke: #f5dfba; stroke-width: 3.5px; stroke-linejoin: round; filter: url(#inkShadow); }
+    .leader { fill: none; stroke: #5c5740; stroke-width: 1.1px; opacity: .7; }
+    .leader-dot { fill: #664d34; stroke: #f1dcaf; stroke-width: 1.4px; }
+  </style>
+
+  <!-- Morskie etykiety pozostają poza obszarami najgęstszego reliefu. -->
+  <g aria-label="Morze Ringus" text-anchor="middle">
+    <path class="sea-rule" d="M680 560h66m194 0h66"/>
+    <path class="sea-diamond" d="M752 560l6-4 6 4-6 4zm175 0l6-4 6 4-6 4z"/>
+    <text class="sea" x="843" y="572">Morze Ringus</text>
+  </g>
+  <g aria-label="Róża wiatrów" transform="translate(843 697)" fill="none" stroke="#3e6970" opacity=".57">
+    <circle r="38" stroke-width="1"/>
+    <circle r="31" stroke-width=".55"/>
+    <path d="M0-44v88M-44 0h88M-27-27l54 54M27-27l-54 54" stroke-width=".9"/>
+    <path d="M0-32l6 26-6 6-6-6z" fill="#345e64" stroke-width=".8"/>
+    <path d="M0 32l6-26-6-6-6 6zM32 0L6 6l-6-6 6-6zM-32 0L-6 6l6-6-6-6z" fill="#c7d7c7" stroke-width=".8"/>
+    <circle r="3" fill="#356169" stroke="none"/>
+    <text x="0" y="-51" text-anchor="middle" style="font:700 11px Georgia,serif;fill:#2e5459;stroke:#d9e4cf;stroke-width:1.5px">N</text>
+  </g>
+
+  <!-- Kontynenty: Centralny i Demonów są opisane przy brzegu, tak jak na mapie powieści. -->
+  <g aria-label="Pięć kontynentów">
+    <path class="leader" d="M615 439l-29-21-19-1"/>
+    <circle class="leader-dot" cx="567" cy="417" r="2.6"/>
+    <text class="continent-sea" x="623" y="449">KONTYNENT CENTRALNY</text>
+    <text class="continent" x="1179" y="420" text-anchor="middle">KONTYNENT DEMONÓW</text>
+    <text class="continent" x="313" y="724" text-anchor="middle">BEGARITT</text>
+    <text class="continent" x="1009" y="765" text-anchor="middle">MILLIS</text>
+    <text class="continent-heaven" x="887" y="113" text-anchor="middle">KONTYNENT NIEBIAŃSKI</text>
+  </g>
+
+  <!-- Krainy i biomy źródłowe. -->
+  <g aria-label="Główne krainy">
+    <text class="realm" x="260" y="424" text-anchor="middle">KRÓLESTWO ASURY</text>
+    <text class="realm" x="475" y="184" text-anchor="middle">PÓŁNOC CENTRALNEGO</text>
+    <text class="realm-light" x="471" y="467" text-anchor="middle">STREFA KONFLIKTU</text>
+    <text class="realm-light" x="1261" y="697" text-anchor="middle">WIELKI LAS</text>
+    <text class="realm" x="1094" y="916" text-anchor="middle">ŚWIĘTE KRÓLESTWO MILLIS</text>
+    <text class="landmark" x="308" y="777" text-anchor="middle">Pustynia Begaritt</text>
+  </g>
+
+  <!-- Główne ośrodki oraz dwa porty najważniejsze dla przeprawy Demonów–Millis. -->
+  <g aria-label="Najważniejsze miasta i porty">
+    <text class="city" x="235" y="164" text-anchor="middle">SHARIA</text>
+    <path class="leader" d="M119 94l-18 24"/>
+    <text class="town" x="143" y="89" text-anchor="middle">ŚWIĘTA KRAINA MIECZA</text>
+    <text class="landmark" x="272" y="272" text-anchor="middle">Fittoa</text>
+    <text class="town" x="182" y="365" text-anchor="middle">ARS</text>
+    <text class="small-landmark" x="426" y="296" text-anchor="middle">Smocza Jama</text>
+    <text class="town" x="551" y="531" text-anchor="middle">SHIRONE</text>
+    <text class="city" x="1284" y="204" text-anchor="middle">RIKARIS</text>
+    <text class="city" x="458" y="839" text-anchor="middle">RAPAN</text>
+    <text class="city" x="1217" y="864" text-anchor="middle">MILLISHION</text>
+    <text class="harbor" x="1320" y="523" text-anchor="start">PORT WIATRU</text>
+    <text class="harbor" x="1279" y="584" text-anchor="start">PORT ZANT</text>
+    <path class="leader" d="M779 877l31-31m79 31l-13-31"/>
+    <text class="harbor" x="766" y="891" text-anchor="middle">PORT WSCHODNI</text>
+    <text class="harbor" x="918" y="891" text-anchor="middle">PORT ZACHODNI</text>
+  </g>
+</svg>

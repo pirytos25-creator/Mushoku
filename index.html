@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#06161b">
+  <meta name="description" content="Szczegółowa mapa świata Mushoku Tensei według ilustracji tomu 4, z opisami miejsc, szlakami trzech sezonów i modelem 3D.">
+  <title>Mushoku Tensei — Wielki Atlas Świata</title>
+  <link rel="stylesheet" href="style-v2.css">
+  <script defer src="bundle.js"></script>
+</head>
+<body>
+  <main id="atlas" class="atlas map-mode">
+    <div class="scene-wrap" id="sceneWrap"><img id="poster" class="poster" src="mapa-kartograficzna.png" alt="Przestrzenny relief pięciu kontynentów świata Mushoku Tensei"><div id="glmap" class="glmap" aria-label="Interaktywna mapa 3D pięciu kontynentów"></div><div class="scene-grain"></div><div class="scene-shade"></div><div id="continentLayer" class="continent-layer" aria-hidden="true"></div><div id="pinLayer" class="pin-layer"></div></div>
+    <div id="cartoMap" class="carto-map" aria-label="Szczegółowa mapa świata Mushoku Tensei"><div id="mapStage" class="map-stage"><img class="carto-img" src="mapa-kartograficzna.png" alt="Szczegółowa kartograficzna mapa pięciu kontynentów świata Mushoku Tensei" draggable="false"><img class="map-labels" src="mapa-etykiety.svg" alt="" aria-hidden="true" draggable="false"><img class="detail-labels" src="mapa-szczegoly.svg" alt="" aria-hidden="true" draggable="false"><svg id="routeSvg" viewBox="0 0 1441 1024" aria-hidden="true"></svg><div id="mapPins" class="map-pins"></div></div></div>
+    <a class="source-credit" href="https://www.baka-tsuki.org/project/index.php?title=File%3AMushoku_Tensei_Vol.4_map_translated.jpg" target="_blank" rel="noopener">MAPA ŹRÓDŁOWA TOMU 4 ↗</a>
+
+    <section id="cityView" class="city-view hidden" aria-label="Zwiedzanie świata Mushoku Tensei w 3D" aria-hidden="true">
+      <div id="city3d" class="city-viewport" aria-label="Interaktywna makieta 3D wybranej lokalizacji"></div>
+      <div class="city-scene-shade" aria-hidden="true"></div>
+      <div id="cityMarkers" class="city-markers" aria-hidden="true"></div>
+      <header class="city-topbar">
+        <div class="city-title"><span id="cityKicker" class="city-kicker">MUSHOKU TENSEI / KRÓLESTWO RANOA</span><h2 id="cityTitle">Sharia</h2><p id="citySubtitle">Miasto Uniwersytetu Magii · rekonstrukcja 3D</p></div>
+        <button id="cityBack" type="button">← <span id="cityBackLabel">WRÓĆ DO MAPY</span></button>
+      </header>
+      <nav class="city-destinations" aria-label="Wybierz scenę do zwiedzania">
+        <button id="cityGoSharia" class="active" type="button"><small>RANOA</small><strong>SHARIA</strong></button>
+        <button id="cityGoMillis" type="button"><small>MILLIS</small><strong>MILLISHION</strong></button>
+        <button id="cityGoDemon" type="button"><small>WĘDRÓWKA DEAD END</small><strong>DEMONÓW</strong></button>
+        <button id="cityEnterInterior" class="city-enter-interior hidden" type="button"><small>UNIWERSYTET RANOA</small><strong>WEJDŹ DO WNĘTRZA ↗</strong></button>
+      </nav>
+      <aside class="city-districts" aria-label="Miejsca w wybranej lokalizacji">
+        <span id="cityDistrictKicker" class="city-kicker">EKSPLORUJ MIASTO</span>
+        <h3 id="cityFocusTitle">Dzielnice Sharii</h3>
+        <p id="cityFocusText">Wybierz miejsce, aby przenieść kamerę do tej części miasta i porównać widok z kadrami anime.</p>
+        <div id="cityHotspots" class="city-hotspots" role="group" aria-label="Wybierz miejsce w mieście"></div>
+      </aside>
+      <div class="city-camera-controls" role="group" aria-label="Kamera sceny 3D">
+        <button id="cityOverview" type="button" class="active" aria-pressed="true">PANORAMA</button>
+        <button id="cityStreet" type="button" aria-pressed="false">POZIOM ULICY</button>
+        <button id="cityImmersive" type="button" aria-pressed="false">UKRYJ PANELE</button>
+        <button id="cityFullscreen" type="button">PEŁNY EKRAN</button>
+      </div>
+      <details id="cityReferencePanel" class="city-reference-panel">
+        <summary><span>PORÓWNAJ Z ANIME</span><strong id="cityReferenceHeading">KADRY I PLAKATY</strong></summary>
+        <div class="city-reference-content"><p id="cityReferenceIntro">Oficjalny kadr odcinka i plakaty anime pokazują wzorce budynków oraz kolorów. Model 3D jest autorską rekonstrukcją.</p><div id="citySources" class="city-sources"></div></div>
+      </details>
+      <div id="cityStatus" class="city-status" role="status" aria-live="polite"></div>
+      <p id="cityGesture" class="city-gesture"><span>PRZECIĄGNIJ · OBRÓĆ &nbsp; / &nbsp; KÓŁKO · ZBLIŻ</span><span>W A S D · PRZEMIEŚĆ &nbsp; / &nbsp; DWUKLIK · PODEJDŹ</span></p>
+    </section>
+    <section id="regionIndex" class="region-index" aria-label="Wybór regionu"><button id="regionIndexToggle" class="region-index-toggle" type="button" aria-expanded="true"><span>ATLAS REGIONÓW</span><strong>WEJDŹ DO KRAINY <b>⌄</b></strong></button><div id="regionList" class="region-list"></div></section>
+    <section id="regionGuide" class="region-guide hidden" aria-label="Mapa regionu"><button id="regionBack" class="region-back" type="button">← CAŁY ŚWIAT</button><button id="regionGuideToggle" class="region-guide-toggle" type="button" aria-expanded="true">OPIS I MIEJSCA ▾</button><div id="regionGuideContent"></div><div id="regionLandmarks" class="region-landmarks"></div><button id="demonRegionEnter" class="region-enter-3d hidden" type="button">ZWIEDŹ KONTYNENT DEMONÓW W 3D ↗</button><div class="region-pager"><button id="regionPrev" type="button" aria-label="Poprzedni region">‹ POPRZEDNI</button><button id="regionNext" type="button" aria-label="Następny region">NASTĘPNY ›</button></div></section>
+
+    <header class="header">
+      <div class="brand"><span class="seal">六</span><span><strong>MUSHOKU TENSEI</strong><em>WIELKI ATLAS ŚWIATA</em></span></div>
+      <div class="season-nav" role="group" aria-label="Wybierz sezon"><button type="button" data-season="all" class="active" aria-label="Cały świat"><span>ATLAS</span><strong>CAŁY ŚWIAT</strong></button><button type="button" data-season="1" aria-label="Sezon pierwszy"><span>OPOWIEŚĆ I</span><strong>SEZON 01</strong></button><button type="button" data-season="2" aria-label="Sezon drugi"><span>OPOWIEŚĆ II</span><strong>SEZON 02</strong></button><button type="button" data-season="3" aria-label="Sezon trzeci"><span>OPOWIEŚĆ III</span><strong>SEZON 03</strong></button></div>
+      <div class="header-actions"><button id="searchToggle" type="button" title="Szukaj miejsca" aria-label="Szukaj miejsca">⌕</button><button id="infoToggle" type="button" title="O mapie" aria-label="O mapie">ⓘ</button></div>
+    </header>
+
+    <div class="map-title"><span class="overline">ATLAS / ŚWIAT LUDZI</span><h1>Mapa świata</h1><p>Wybierz punkt, przybliż mapę lub obróć relief 3D.</p></div>
+    <div class="compass" aria-hidden="true"><span>N</span><div class="needle"></div><span>S</span></div>
+
+    <div class="hud-left"><span class="hud-label">TRASY PODRÓŻY</span><div class="route-legend"><span><i class="s1"></i>S1 <small>POWRÓT DO DOMU</small></span><span><i class="s2"></i>S2 <small>SHARIA → BEGARITT</small></span><span><i class="s3"></i>S3 <small>NOWY PUNKT ZWROTNY</small></span></div><div class="map-note">POŁOŻENIA I SZLAKI SĄ ORIENTACYJNE · S3 DO ODC. 14</div></div>
+
+    <div class="hud-right"><div class="view-switch" role="group" aria-label="Wybierz widok świata"><button id="view2d" class="active" type="button"><small>ŚWIAT</small><strong>MAPA 2D</strong></button><button id="view3d" type="button"><small>ŚWIAT</small><strong>RELIEF 3D</strong></button></div><div class="city-portals" role="group" aria-label="Wejdź do lokalizacji 3D"><button id="cityEnter" type="button"><small>RANOA</small><strong>SHARIA 3D</strong></button><button id="millisEnter" type="button"><small>ŚWIĘTE MIEJSCE</small><strong>MILLISHION 3D</strong></button><button id="demonEnter" type="button"><small>MIGURD · RIKARIS</small><strong>DEMONÓW 3D</strong></button></div><div class="zoom-buttons"><button id="zoomIn" type="button" aria-label="Przybliż">＋</button><button id="zoomOut" type="button" aria-label="Oddal">−</button><button id="reset" type="button" aria-label="Przywróć widok">⌖</button></div><span class="control-hint">PRZECIĄGNIJ · PRZESUŃ &nbsp; / &nbsp; KÓŁKO · ZOOM</span></div>
+
+    <div class="journey" id="journey"><button id="prevEvent" type="button" aria-label="Poprzedni etap">‹</button><div class="journey-copy"><span id="journeyMeta">TRASA / SEZON 01</span><strong id="journeyTitle">Drugie życie</strong><p id="journeyText">Buena, nauka magii i pierwsze wyjście poza rodzinny dom.</p></div><span id="journeyIndex" class="journey-index">01 / 24</span><button id="nextEvent" type="button" aria-label="Następny etap">›</button></div>
+
+    <aside id="placePanel" class="place-panel hidden" aria-hidden="true"><button id="closePanel" class="panel-close" type="button" aria-label="Zamknij opis">×</button><div id="placeContent"></div><button id="cityEnterPlace" class="city-enter-place hidden" type="button"><span>WEJDŹ DO MIASTA</span><strong>ZWIEDŹ SHARIĘ W 3D <b>↗</b></strong></button><button id="millisEnterPlace" class="city-enter-place hidden" type="button"><span>WEJDŹ DO MIASTA</span><strong>ZWIEDŹ MILLISHION W 3D <b>↗</b></strong></button><button id="demonEnterPlace" class="city-enter-place hidden" type="button"><span>WEJDŹ NA KONTYNENT</span><strong>ZWIEDŹ REJONY DEMONÓW W 3D <b>↗</b></strong></button></aside>
+    <aside id="searchPanel" class="search-panel hidden" aria-hidden="true"><div class="search-head"><strong>ODKRYJ MIEJSCE</strong><button id="closeSearch" type="button" aria-label="Zamknij wyszukiwarkę">×</button></div><input id="searchInput" type="search" placeholder="Nazwa miejsca lub kontynentu" aria-label="Szukaj miejsca"><div id="searchResults"></div></aside>
+    <section id="infoPanel" class="info-panel hidden" aria-hidden="true"><div class="info-card"><button id="closeInfo" type="button" aria-label="Zamknij informacje">×</button><span class="overline">O MAPIE</span><h2>Wielki Atlas Świata Ludzi</h2><p>Główny widok to autorska rekonstrukcja kartograficzna oparta na szczegółowej ilustracji mapy z tomu 4 powieści i opisach geograficznych autora. Wybierz krainę z Atlasu Regionów, aby wejść na jej osobną mapę z miejscami i detalami. Ilustrację źródłową otworzysz przez odnośnik w rogu mapy. Wybrzeża, detale terenu i punkty bez ustalonej lokalizacji są interpretacją artystyczną.</p><p>Relief 3D wykorzystuje ten sam podkład kartograficzny oraz model wysokości pięciu lądów. Osobne autorskie modele GLB pokazują Sharię, Millishion, drogę przez Kontynent Demonów i wnętrze Uniwersytetu Ranoa. Sharia ma układ dzielnic opisany przez autora: Gildia Magii w centrum, uczelnia na wschodzie, warsztaty Neris na zachodzie, Gildia Handlowa na północy i zajazdy na południu. Oficjalne kadry i plakaty anime oraz tekst autora służą jako odniesienia; w panelach scen można je porównać z rekonstrukcją. Dokładne plany ulic i pomieszczeń nie są kanonicznie określone. Chaos Breaker jest fortecą latającą i nie ma stałej pinezki na mapie.</p><p>Stan opisów anime: 27 września 2026, sezon 3 do odcinka 14. Wybór sezonu może ujawnić wydarzenia z tej części.</p><div class="info-links"><a href="https://mushokutensei.jp/story/" target="_blank" rel="noopener">Oficjalne opisy odcinków ↗</a><a href="https://www.baka-tsuki.org/project/index.php?title=File%3AMushoku_Tensei_Vol.4_map_translated.jpg" target="_blank" rel="noopener">Ilustracja mapy z tomu 4 ↗</a><a href="https://ncode.syosetu.com/n9669bk/75/" target="_blank" rel="noopener">Plan Sharii w tekście autora ↗</a><a href="https://ncode.syosetu.com/n9669bk/72/" target="_blank" rel="noopener">Geografia świata ↗</a></div><small>Nieoficjalny projekt fanowski. Świat i nazwy należą do ich właścicieli.</small></div></section>
+    <div id="loading" class="loading"><span class="loading-rune">六</span><span>BUDOWANIE ŚWIATA 3D</span><div><i></i></div></div>
+  </main>
+</body>
+</html>

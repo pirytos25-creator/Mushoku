@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1441" height="1024" viewBox="0 0 1441 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Mushoku Tensei — szczegółowe podpisy mapy świata</title>
+  <desc id="desc">Przezroczysta warstwa nazw królestw, pasm górskich, traktów, portów i terytoriów do włączenia po przybliżeniu mapy.</desc>
+  <defs>
+    <filter id="detailShadow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation=".9" result="blur"/>
+      <feOffset in="blur" dx="0" dy="1" result="offset"/>
+      <feComponentTransfer in="offset" result="soft"><feFuncA type="linear" slope=".38"/></feComponentTransfer>
+      <feMerge><feMergeNode in="soft"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: 'Palatino Linotype', 'Book Antiqua', Georgia, serif; paint-order: stroke fill; text-rendering: geometricPrecision; }
+    .realm { font-size: 15px; font-weight: 700; letter-spacing: .8px; fill: #3a392a; stroke: #f3e0bc; stroke-width: 3.8px; stroke-linejoin: round; filter: url(#detailShadow); }
+    .region { font-size: 14px; font-style: italic; font-weight: 700; letter-spacing: .6px; fill: #534731; stroke: #f5e0b9; stroke-width: 3.6px; stroke-linejoin: round; filter: url(#detailShadow); }
+    .mountain { font-size: 15px; font-style: italic; font-weight: 700; letter-spacing: .7px; fill: #433629; stroke: #f6dfb7; stroke-width: 4px; stroke-linejoin: round; filter: url(#detailShadow); }
+    .forest { font-size: 13px; font-style: italic; font-weight: 700; letter-spacing: .3px; fill: #f3e8c8; stroke: #284630; stroke-width: 3.8px; stroke-linejoin: round; filter: url(#detailShadow); }
+    .settlement { font-size: 14px; font-weight: 700; letter-spacing: .4px; fill: #3f3427; stroke: #f7e1bd; stroke-width: 3.7px; stroke-linejoin: round; filter: url(#detailShadow); }
+    .port { font-size: 13px; font-weight: 700; letter-spacing: .35px; fill: #263d42; stroke: #e1dfc5; stroke-width: 3.4px; stroke-linejoin: round; filter: url(#detailShadow); }
+    .water { font-size: 13px; font-style: italic; letter-spacing: .45px; fill: #285a60; stroke: #dce6d2; stroke-width: 2.6px; stroke-linejoin: round; }
+    .cliff { font-size: 13px; font-style: italic; font-weight: 700; letter-spacing: .4px; fill: #355358; stroke: #d9e4d0; stroke-width: 2.8px; stroke-linejoin: round; }
+    .leader { fill: none; stroke: #514a35; stroke-width: 1.05px; opacity: .7; }
+    .anchor { fill: #684b32; stroke: #f5dfb3; stroke-width: 1.2px; }
+  </style>
+
+  <!-- Północ Centralnego, zachodnia Asura i kraje magiczne. -->
+  <g aria-label="Północ i zachód Kontynentu Centralnego">
+    <text class="realm" x="238" y="116" text-anchor="middle">NERIS</text>
+    <text class="realm" x="329" y="116" text-anchor="middle">BASHERANT</text>
+    <text class="realm" x="266" y="206" text-anchor="middle">KRÓLESTWO RANOA</text>
+    <text class="realm" x="678" y="183" text-anchor="middle">BIHEIRIL</text>
+    <text class="region" x="147" y="294" text-anchor="middle">Domena Donati</text>
+    <text class="region" x="156" y="221" text-anchor="middle">Górna Szczęka</text>
+    <text class="region" x="332" y="608" text-anchor="middle">Dolna Szczęka</text>
+    <text class="region" x="442" y="645" text-anchor="middle">Gęsty Las</text>
+  </g>
+
+  <!-- Naturalne bariery Centralnego; podpisy biegną wzdłuż opisanych pasm. -->
+  <g aria-label="Góry i osobliwości Kontynentu Centralnego">
+    <text class="mountain" x="330" y="462" transform="rotate(-76 330 462)">Góry Czerwonego Smoka</text>
+    <text class="mountain" x="497" y="657" transform="rotate(53 497 657)">Góry Króla Smoków</text>
+    <text class="region" x="405" y="319" text-anchor="middle">Góra Płaczącego Smoka</text>
+    <text class="region" x="266" y="331" text-anchor="middle">Krater teleportacji</text>
+  </g>
+
+  <!-- Kolejność państw wschodniego wybrzeża: Shirone, Kikka, Sanakia, Król Smoków. -->
+  <g aria-label="Południe Kontynentu Centralnego">
+    <text class="realm" x="574" y="595" text-anchor="middle">KIKKA</text>
+    <text class="realm" x="596" y="662" text-anchor="middle">SANAKIA</text>
+    <text class="realm" x="680" y="822" text-anchor="middle">KRÓLESTWO KRÓLA SMOKÓW</text>
+  </g>
+
+  <!-- Przesmyki, płaskowyż i Kontynent Demonów. -->
+  <g aria-label="Północne i wschodnie brzegi Morza Ringus">
+    <text class="cliff" x="876" y="177" text-anchor="middle">WYSOKI KLIF · OK. 3000 M</text>
+    <text class="region" x="727" y="243" text-anchor="middle">Wyspa Ogrów</text>
+    <text class="settlement" x="1036" y="195" text-anchor="middle">KURASUMA</text>
+    <text class="mountain" x="1187" y="336" text-anchor="middle" transform="rotate(-58 1187 336)">Góry Demonów</text>
+    <text class="region" x="1278" y="372" text-anchor="middle">Suche wąwozy</text>
+  </g>
+
+  <!-- Millis: terytoria nie mają tu sztucznie wykreślonych granic. -->
+  <g aria-label="Regiony Kontynentu Millis">
+    <text class="forest" x="1086" y="721" text-anchor="middle">Terytorium hobbitów</text>
+    <text class="forest" x="1333" y="655" text-anchor="middle">Terytorium zwierzoludzi</text>
+    <text class="forest" x="1338" y="753" text-anchor="middle">Terytorium elfów</text>
+    <text class="forest" x="1290" y="796" text-anchor="middle">Terytorium krasnoludów</text>
+    <text class="mountain" x="1087" y="828" transform="rotate(4 1087 828)">Góry Błękitnego Smoka</text>
+    <text class="region" x="1165" y="606" transform="rotate(76 1165 606)">Trakt Świętego Miecza</text>
+    <text class="water" x="1075" y="801" text-anchor="middle">Rzeka Nikolas</text>
+  </g>
+
+  <!-- Begaritt: Rapan ma odrębną ikonę/znacznik w warstwie interakcji. -->
+  <g aria-label="Begaritt">
+    <text class="region" x="247" y="895" text-anchor="middle">Oazy południa</text>
+    <text class="region" x="448" y="860" text-anchor="middle">Miasto labiryntów</text>
+  </g>
+</svg>

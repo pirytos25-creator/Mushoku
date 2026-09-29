@@ -1,0 +1,14 @@
+{
+  "name": "mushoku-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.cjs"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
